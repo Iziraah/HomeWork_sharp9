@@ -7,7 +7,7 @@ int m = int.Parse(Console.ReadLine());
 Console.WriteLine("Введите значение m: ");
 int n = int.Parse(Console.ReadLine());
 
-int recursion(int m, int n)
+int FunctionAkk(int m, int n)
 {
     if (m == 0)
     {
@@ -15,13 +15,12 @@ int recursion(int m, int n)
     }
     else if (n == 0 && m > 0)
     {
-    return recursion(m - 1, 1);
+    return FunctionAkk(m - 1, 1);
     }
     else
     {
-    return recursion(m - 1, recursion(m, n - 1));
+    return FunctionAkk(m - 1, FunctionAkk(m, n - 1));
     }
 }
-recursion(m, n);
-Console.WriteLine(recursion(m, n));
-
+FunctionAkk(m, n);
+Console.WriteLine(FunctionAkk(m, n));
